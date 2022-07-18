@@ -1,3 +1,8 @@
+# Author: Chris Richards
+# Email: christopher.richards4@snhu.edu
+# File: pseudocode.txt
+#
+
 LinkedList::Constructor()
     set head to null
     set tail to null
