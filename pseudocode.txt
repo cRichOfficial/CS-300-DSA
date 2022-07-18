@@ -1,0 +1,63 @@
+LinkedList::Constructor()
+    set head to null
+    set tail to null
+end LinkedList::Constructor
+
+void LinkedList::Append(bid)
+    create a new Node(bid) to add to LinkedList
+    
+    IF(the head is nothing)
+        set the head and tail to the new node
+    ELSE
+        set the tail's node to the new node
+        point the tail to the new nodes
+    
+    increment the size variable 
+end LinkedList::Append
+
+void LinkedList::Prepend(bid)
+    create a new Node(bid) to add to the LinkedList
+    
+    IF(the head node is not empty)
+        set the new node's next node to the head's next node
+        set the head to the new node
+    ELSE # The linked list is empty
+        set the head and tail to the new node
+
+    increment the size variable
+end LinkedList::Prepend
+
+void LinkedList::PrintList()
+    set current node to the head
+    WHILE the current node is not null
+        print contents of the node's bid
+        set current node to the next node
+end LinkedList::PrintList
+
+void LinkedList::Remove(bidId)
+    IF the head node is not null # List is not empty
+        IF the head node's bidId is equal to the bidId being removed
+            set a temp node to the head
+            set the head to the head's next node
+            delete the temp node
+            decrement the size variable
+            return
+        ELSE
+            set the current Node to the head
+            WHILE current node is not null
+                IF the current node's bidId is equal to the bidId being removed
+                    set a temp node to the current node
+                    set the current node's next node to the current node's next node's next
+                    delete the temp node
+                    decrement the size variable
+
+end LinkedList::Remove
+
+Bid LinkedList::Search(bidId)
+    set the current node to the head node
+    WHILE the current node is not null
+        IF the current node's bidId is aqual to the bidId being searched
+            return the current node's bid
+        ELSE # No bid found
+            return an empty bid
+end LinkedList::Search

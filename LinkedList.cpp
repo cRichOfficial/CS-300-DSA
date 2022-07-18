@@ -139,6 +139,10 @@ void LinkedList::Prepend(Bid bid) {
         newNode->next = this->head->next;
         this->head = newNode;
     }
+    else {
+        this->head = newNode;
+        this->tail = newNode;
+    }
     
     //increase size count
     this->size++;
@@ -170,8 +174,10 @@ void LinkedList::Remove(string bidId) {
     // special case if matching node is the head
     if (this->head != nullptr) {
         if (this->head->bid.bidId == bidId) {
+            Node* tempNode = this->head;
             this->head = this->head->next;
             --this->size;
+            delete tempNode;
             return;
         }
         else {
